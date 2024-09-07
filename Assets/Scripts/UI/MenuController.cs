@@ -4,30 +4,31 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
     public Text[] menuItems; // Array de itens do menu
-    public Image highlightImage; // Imagem do polígono de seleção
-    public float moveSpeed = 10f; // Velocidade de movimento do polígono
+    public Image highlightImage; // Imagem do polï¿½gono de seleï¿½ï¿½o
+    public float moveSpeed = 10f; // Velocidade de movimento do polï¿½gono
 
-    public float horizontalOffset = 0f; // Offset horizontal da imagem de seleção
+    public float horizontalOffset = 0f; // Offset horizontal da imagem de seleï¿½ï¿½o
 
-    public Font defaultFont; // Fonte padrão dos itens do menu
+    public Font defaultFont; // Fonte padrï¿½o dos itens do menu
     public Font highlightedFont; // Fonte dos itens do menu quando selecionado
 
-    public Text selectedOptionText; // Texto que exibirá a opção selecionada
+    public Text selectedOptionText; // Texto que exibirï¿½ a opï¿½ï¿½o selecionada
 
-    public string customText = "Selected: "; // Texto personalizado para exibir com a opção selecionada
+    public string customText = "Selected: "; // Texto personalizado para exibir com a opï¿½ï¿½o selecionada
 
     private int currentIndex = 0;
 
     void Start()
     {
         UpdateHighlight();
-        UpdateSelectedOptionText(); // Inicializa o texto com a opção selecionada
+        UpdateSelectedOptionText(); // Inicializa o texto com a opï¿½ï¿½o selecionada
     }
 
     void Update()
     {
         HandleKeyboardInput();
         HandleMouseInput();
+       
     }
 
     private void HandleKeyboardInput()
@@ -40,11 +41,30 @@ public class MenuController : MonoBehaviour
         {
             ChangeSelection(-1);
         }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (currentIndex == 0)//Start
+            {
+                MyLoading.LoadLevel("Level1");
+            }
+            else if (currentIndex == 1)//Settings
+            {
+                
+            }
+            else if (currentIndex == 2)//Credits
+            {
+              
+            }
+            else if (currentIndex == 3)//Quit
+            {
+               Application.Quit();
+            }
+        }
     }
 
     private void HandleMouseInput()
     {
-        // Verifica se o mouse está sobre um item do menu
+        // Verifica se o mouse estï¿½ sobre um item do menu
         for (int i = 0; i < menuItems.Length; i++)
         {
             RectTransform rectTransform = menuItems[i].GetComponent<RectTransform>();
@@ -54,6 +74,25 @@ public class MenuController : MonoBehaviour
                 //{
                     ChangeSelection(i - currentIndex);
                 //}
+
+                if (Input.GetMouseButtonDown(0)){
+                    if (currentIndex == 0)//Start
+                    {
+                        MyLoading.LoadLevel("Level1");
+                    }
+                    else if (currentIndex == 1)//Settings
+                    {
+                        
+                    }
+                    else if (currentIndex == 2)//Credits
+                    {
+                    
+                    }
+                    else if (currentIndex == 3)//Quit
+                    {
+                    Application.Quit();
+                    }
+                }
             }
         }
     }
@@ -62,7 +101,7 @@ public class MenuController : MonoBehaviour
     {
         currentIndex = Mathf.Clamp(currentIndex + direction, 0, menuItems.Length - 1);
         UpdateHighlight();
-        UpdateSelectedOptionText(); // Atualiza o texto com a opção selecionada
+        UpdateSelectedOptionText(); // Atualiza o texto com a opï¿½ï¿½o selecionada
     }
 
     private void UpdateHighlight()
@@ -79,8 +118,8 @@ public class MenuController : MonoBehaviour
             }
             else
             {
-                menuItems[i].color = Color.white; // Reseta a cor do item não selecionado
-                menuItems[i].font = defaultFont; // Altera a fonte para a padrão
+                menuItems[i].color = Color.white; // Reseta a cor do item nï¿½o selecionado
+                menuItems[i].font = defaultFont; // Altera a fonte para a padrï¿½o
             }
         }
     }
