@@ -19,7 +19,7 @@ public class WavyTextEffect : MonoBehaviour
         textComponent.ForceMeshUpdate();
 
         Vector3[] vertices;
-        Matrix4x4 matrix;
+        //Matrix4x4 matrix;
 
         while (true)
         {
