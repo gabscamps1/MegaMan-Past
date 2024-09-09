@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Control : MonoBehaviour
@@ -89,7 +90,7 @@ public class Control : MonoBehaviour
             {
                 JumpRoutineSide(hitright); // Chama a rotina de pulo lateral.
             }
-            Debug.DrawLine(hitright.point, transform.position + Vector3.up * 0.5f);
+            //Debug.DrawLine(hitright.point, transform.position + Vector3.up * 0.5f);
         }
     }
 
