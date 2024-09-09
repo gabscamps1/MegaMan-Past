@@ -7,7 +7,7 @@ public class Control : MonoBehaviour
     public Animator anima; // Referência ao Animator do personagem.
     float xmov; // Variável para guardar o movimento horizontal.
     public Rigidbody2D rdb; // Referência ao Rigidbody2D do personagem.
-    bool jump, doublejump,jumpagain; // Flags para controle de pulo e pulo duplo.
+    bool jump, doublejump, jumpagain; // Flags para controle de pulo e pulo duplo.
     float jumptime, jumptimeside; // Controla a duração dos pulos.
     public ParticleSystem fire; // Sistema de partículas para o efeito de fogo.
 
@@ -25,9 +25,9 @@ public class Control : MonoBehaviour
         // Verifica se o botão de pulo foi pressionado e controla o pulo duplo.
         if (Input.GetButtonDown("Jump"))
         {
-          
-                doublejump = true;
-            
+
+            doublejump = true;
+
         }
         if (Input.GetButtonUp("Jump"))
         {
@@ -35,10 +35,10 @@ public class Control : MonoBehaviour
         }
 
         // Define o estado de pulo com base na entrada do usuário.
-        if (Input.GetButton("Jump")&& jumpagain)
+        if (Input.GetButton("Jump") && jumpagain)
         {
             jump = true;
-            
+
         }
         else
         {
@@ -65,8 +65,8 @@ public class Control : MonoBehaviour
         anima.SetFloat("Velocity", Mathf.Abs(xmov)); // Define a velocidade no Animator.
 
         // Adiciona uma força para mover o personagem.
-        if(jumptimeside<0.1f)
-        rdb.AddForce(new Vector2(xmov * 20 / (rdb.velocity.magnitude + 1), 0));
+        if (jumptimeside < 0.1f)
+            rdb.AddForce(new Vector2(xmov * 20 / (rdb.velocity.magnitude + 1), 0));
 
         RaycastHit2D hit;
 
@@ -75,8 +75,8 @@ public class Control : MonoBehaviour
         if (hit)
         {
             anima.SetFloat("Height", hit.distance);
-            if(jumptimeside<0.1)
-            JumpRoutine(hit); // Chama a rotina de pulo.
+            if (jumptimeside < 0.1)
+                JumpRoutine(hit); // Chama a rotina de pulo.
         }
 
         RaycastHit2D hitright;
@@ -85,7 +85,7 @@ public class Control : MonoBehaviour
         hitright = Physics2D.Raycast(transform.position + Vector3.up * 0.5f, transform.right, 1);
         if (hitright)
         {
-            if (hitright.distance < 0.3f && hit.distance>0.5f)
+            if (hitright.distance < 0.3f && hit.distance > 0.5f)
             {
                 JumpRoutineSide(hitright); // Chama a rotina de pulo lateral.
             }
@@ -100,7 +100,7 @@ public class Control : MonoBehaviour
         if (hit.distance < 0.1f)
         {
             jumptime = 1;
-           
+
         }
 
         if (jump)
@@ -112,7 +112,7 @@ public class Control : MonoBehaviour
                 jumpagain = false;
             }
         }
-        
+
     }
 
     // Rotina de pulo lateral.
@@ -125,9 +125,9 @@ public class Control : MonoBehaviour
 
         if (doublejump)
         {
-           // PhisicalReverser();
+            // PhisicalReverser();
             jumptimeside = Mathf.Lerp(jumptimeside, 0, Time.fixedDeltaTime * 10);
-            rdb.AddForce((hitside.normal + Vector2.up) * jumptimeside , ForceMode2D.Impulse);
+            rdb.AddForce((hitside.normal + Vector2.up) * jumptimeside, ForceMode2D.Impulse);
         }
     }
 

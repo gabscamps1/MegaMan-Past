@@ -9936,6 +9936,9 @@ MonoBehaviour:
   anima: {fileID: 95530863979618488}
   rdb: {fileID: 50029467371763818}
   fire: {fileID: 198825090059282404}
+  totalJumps: 1
+  jumpForce: 5
+  sideJumpForce: 6
 --- !u!70 &70173381863498560
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
