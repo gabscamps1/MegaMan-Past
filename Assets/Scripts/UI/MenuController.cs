@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
@@ -53,7 +54,7 @@ public class MenuController : MonoBehaviour
             }
             else if (currentIndex == 2)//Credits
             {
-              
+                SceneManager.LoadScene("Credits");
             }
             else if (currentIndex == 3)//Quit
             {
@@ -86,7 +87,7 @@ public class MenuController : MonoBehaviour
                     }
                     else if (currentIndex == 2)//Credits
                     {
-                    
+                        SceneManager.LoadScene("Credits");
                     }
                     else if (currentIndex == 3)//Quit
                     {
