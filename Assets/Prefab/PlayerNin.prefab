@@ -27,9 +27,9 @@ Transform:
   m_GameObject: {fileID: 1564723697188490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.538, y: 0.522, z: -0}
+  m_LocalPosition: {x: 0.538, y: 0.202, z: -0}
   m_LocalScale: {x: 3.7, y: 3.7, z: 3.7}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4673051696311486}
   m_Father: {fileID: 4664568246221834}
@@ -9763,6 +9763,7 @@ GameObject:
   - component: {fileID: 95530863979618488}
   - component: {fileID: 114818115634691074}
   - component: {fileID: 70173381863498560}
+  - component: {fileID: 5602533975209370223}
   m_Layer: 2
   m_Name: PlayerNin
   m_TagString: Player
@@ -9897,7 +9898,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.43}
+  m_Offset: {x: 0, y: 0.03}
   m_Size: {x: 0.29, y: 0.84}
   m_Direction: 0
 --- !u!95 &95530863979618488
@@ -9910,7 +9911,7 @@ Animator:
   m_GameObject: {fileID: 1989187543047504}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: af882366a765957478d0b53215fe9e6a, type: 2}
+  m_Controller: {fileID: 9100000, guid: a10715d8a38f7b14e878e120cd9dad11, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9928,7 +9929,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989187543047504}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61782caa48f696d458c95daa6e99c7e8, type: 3}
   m_Name: 
@@ -9936,9 +9937,6 @@ MonoBehaviour:
   anima: {fileID: 95530863979618488}
   rdb: {fileID: 50029467371763818}
   fire: {fileID: 198825090059282404}
-  totalJumps: 1
-  jumpForce: 5
-  sideJumpForce: 6
 --- !u!70 &70173381863498560
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9971,6 +9969,21 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.44}
+  m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.43, y: 0.74}
   m_Direction: 0
+--- !u!114 &5602533975209370223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989187543047504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea24270e2f14cd4085bff40005600b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anima: {fileID: 95530863979618488}
+  rdb: {fileID: 50029467371763818}
+  fire: {fileID: 198825090059282404}
