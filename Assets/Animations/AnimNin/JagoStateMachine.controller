@@ -87,7 +87,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: JumpFly
-  m_Speed: 10
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4083962958794019368}
@@ -852,7 +852,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Walk
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1243891579587978241}
