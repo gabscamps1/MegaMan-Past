@@ -9761,9 +9761,8 @@ GameObject:
   - component: {fileID: 50029467371763818}
   - component: {fileID: 70945586788512560}
   - component: {fileID: 95530863979618488}
-  - component: {fileID: 114818115634691074}
   - component: {fileID: 70173381863498560}
-  - component: {fileID: 5602533975209370223}
+  - component: {fileID: -7315112944909984969}
   m_Layer: 2
   m_Name: PlayerNin
   m_TagString: Player
@@ -9922,21 +9921,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &114818115634691074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989187543047504}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61782caa48f696d458c95daa6e99c7e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anima: {fileID: 95530863979618488}
-  rdb: {fileID: 50029467371763818}
-  fire: {fileID: 198825090059282404}
 --- !u!70 &70173381863498560
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9972,7 +9956,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.43, y: 0.74}
   m_Direction: 0
---- !u!114 &5602533975209370223
+--- !u!114 &-7315112944909984969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9981,9 +9965,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1989187543047504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ea24270e2f14cd4085bff40005600b3, type: 3}
+  m_Script: {fileID: 11500000, guid: b92eb66dffeb9ad40aa73d5d29fb6517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anima: {fileID: 95530863979618488}
   rdb: {fileID: 50029467371763818}
   fire: {fileID: 198825090059282404}
+  jumpBoost: {fileID: 0}
