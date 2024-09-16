@@ -95,8 +95,8 @@ public class ControlPlayer2 : MonoBehaviour
 
         // Faz um raycast para a direita para detectar paredes.
         RaycastHit2D hitright;
-        hitright = Physics2D.Raycast(transform.position + (Vector3.up * 0.41f) + (transform.right * 0.45f), transform.right);
-        Debug.DrawLine(transform.position + (Vector3.up * 0.41f) + (transform.right * 0.45f), hitright.point);
+        hitright = Physics2D.Raycast(transform.position + (Vector3.up * 0.50f) + (transform.right * 0.45f), transform.right);
+        Debug.DrawLine(transform.position + (Vector3.up * 0.50f) + (transform.right * 0.45f), hitright.point);
         if (hitright && hitright.distance < 0.03f && hit.distance > 0.3f)
         {
             JumpRoutineSide(hitright); // Chama a rotina de pulo lateral.
