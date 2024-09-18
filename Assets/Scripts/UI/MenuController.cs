@@ -44,21 +44,20 @@ public class MenuController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (currentIndex == 0)//Start
+            switch (currentIndex)
             {
-                MyLoading.LoadLevel("Level1");
-            }
-            else if (currentIndex == 1)//Settings
-            {
-                
-            }
-            else if (currentIndex == 2)//Credits
-            {
-              SceneManager.LoadScene("Credits");
-            }
-            else if (currentIndex == 3)//Quit
-            {
-               Application.Quit();
+                case 0: //Start
+                    MyLoading.LoadLevel("Level1");
+                    break;
+                case 1: //Settings
+
+                    break;
+                case 2: //Quit
+                    SceneManager.LoadScene("Credits");
+                    break;
+                case 3: //Quit
+                    Application.Quit();
+                    break;
             }
         }
     }
@@ -77,21 +76,20 @@ public class MenuController : MonoBehaviour
                 //}
 
                 if (Input.GetMouseButtonDown(0)){
-                    if (currentIndex == 0)//Start
+                    switch (currentIndex)
                     {
-                        MyLoading.LoadLevel("Level1");
-                    }
-                    else if (currentIndex == 1)//Settings
-                    {
-                        
-                    }
-                    else if (currentIndex == 2)//Credits
-                    {
-                        SceneManager.LoadScene("Credits");
-                    }
-                    else if (currentIndex == 3)//Quit
-                    {
-                    Application.Quit();
+                        case 0: //Start
+                            MyLoading.LoadLevel("Level1");
+                            break;
+                        case 1: //Settings
+
+                            break;
+                        case 2: //Quit
+                            SceneManager.LoadScene("Credits");
+                            break;
+                        case 3: //Quit
+                            Application.Quit();
+                            break;
                     }
                 }
             }
@@ -129,24 +127,23 @@ public class MenuController : MonoBehaviour
     {
         if (selectedOptionText != null && menuItems.Length > 0)
         {
-            if (currentIndex == 0)
+            switch (currentIndex)
             {
-                selectedOptionText.text = "Start the game.";
-            }
-            else if (currentIndex == 1)
-            {
-                selectedOptionText.text = "Change game settings.";
-            }
-            else if (currentIndex == 2)
-            {
-                selectedOptionText.text = "See the game credits.";
-            }
-            else if (currentIndex == 3)
-            {
-                selectedOptionText.text = "Close the game.";
-            }
-            else {
-                selectedOptionText.text = "";
+                case 0:
+                    selectedOptionText.text = "Start the game.";
+                    break;
+                case 1:
+                    selectedOptionText.text = "Change game settings.";
+                    break;
+                case 2:
+                    selectedOptionText.text = "See the game credits.";
+                    break;
+                case 3:
+                    selectedOptionText.text = "Close the game.";
+                    break;
+                default:
+                    selectedOptionText.text = "";
+                    break;
             }
 
             //selectedOptionText.text = customText + menuItems[currentIndex].text; // Atualiza o texto com o item selecionado e o texto personalizado
