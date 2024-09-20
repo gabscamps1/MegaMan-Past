@@ -25,7 +25,7 @@ public class ControlPlayer2 : MonoBehaviour
 
     void Update()
     {
-        print(rdb.velocity.y);
+        //print(rdb.velocity.y);
         // Captura o movimento horizontal do jogador e Define as velocidades no Animator.
         xmov = Input.GetAxis("Horizontal");
         anima.SetFloat("Velocity", Mathf.Abs(xmov));

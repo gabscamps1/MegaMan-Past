@@ -47,7 +47,7 @@ public class MenuController : MonoBehaviour
             switch (currentIndex)
             {
                 case 0: //Start
-                    MyLoading.LoadLevel("Level1");
+                    MyLoading.LoadLevel("GameplayTest");
                     break;
                 case 1: //Settings
 
