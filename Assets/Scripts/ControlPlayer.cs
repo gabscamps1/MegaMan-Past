@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using static Cinemachine.DocumentationSortingAttribute;
 
 public class ControlPlayer : MonoBehaviour
 {
@@ -145,10 +146,21 @@ public class ControlPlayer : MonoBehaviour
     // Detecção de colisão com objetos marcados com a tag "Damage" ou "Enemy".
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Damage") || collision.collider.CompareTag("Enemy"))
+        if (collision.collider.CompareTag("Damage") || collision.collider.CompareTag("Enemy") || collision.collider.CompareTag("EnemyBullet")) 
         {
+            StartCoroutine(Blink());
             LevelManager.instance.LowDamage(); // Chama a função para aplicar dano.
         }
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.CompareTag("EnemyBullet")) {
+            //StartCoroutine(Blink());
+            LevelManager.instance.LowDamage(); // Chama a função para aplicar dano.
+        }
+
+
     }
 
     // Função é chamada pela animação de JumpShoot e Walk Shoot.
@@ -156,6 +168,26 @@ public class ControlPlayer : MonoBehaviour
     {
         float frame = anima.GetCurrentAnimatorStateInfo(0).normalizedTime; // Pega o frame atual da animação e normaliza.
         anima.SetFloat("Frames", frame); // Seta o frame atual no novo estado.
+    }
+
+    IEnumerator Blink()
+    {
+
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        if (!renderer)
+        {
+            renderer = GetComponentInChildren<SpriteRenderer>();
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            renderer.color = new Color(1, 0, 0);
+
+            yield return new WaitForSeconds(0.1f);
+
+            renderer.color = new Color(1, 1, 1);
+
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }
 

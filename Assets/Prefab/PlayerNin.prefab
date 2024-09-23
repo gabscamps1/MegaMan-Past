@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 199992784841138236}
   m_Layer: 2
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: Shuriken
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4795,7 +4795,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d69911fd2094bf641805c7a610bd44a4, type: 2}
+  - {fileID: 2100000, guid: 7634dd9544a30d742b7e42de80e636d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4861,7 +4861,7 @@ GameObject:
   - component: {fileID: 199492634134104890}
   m_Layer: 2
   m_Name: SubEmitter0
-  m_TagString: Untagged
+  m_TagString: Shuriken
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9970,5 +9970,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anima: {fileID: 95530863979618488}
   rdb: {fileID: 50029467371763818}
+  jumpCount: 0
+  currentJumps: 0
   fire: {fileID: 198825090059282404}
-  jumpBoost: {fileID: 0}

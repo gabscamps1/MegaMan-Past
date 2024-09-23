@@ -30,29 +30,34 @@ public class Damage : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
 
-        StartCoroutine(Blink());
+  
 
-        lives--;
-        if (lives < initiallives/2)
+        if (other.CompareTag("Shuriken"))
         {
-            CreateandPlay(smoke);
-        }
+            StartCoroutine(Blink());
 
-        if (lives < 1)
-        {
-            CreateandPlay(explosion);
-
-            SpriteRenderer renderer = GetComponent<SpriteRenderer>();
-            if (!renderer)
+            lives--;
+            if (lives < initiallives / 2)
             {
-                renderer = GetComponentInChildren<SpriteRenderer>();
+                CreateandPlay(smoke);
             }
-            renderer.enabled = false;
-            Destroy(gameObject, 0.8f);
+
+            if (lives < 1)
+            {
+                CreateandPlay(explosion);
+
+                SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+                if (!renderer)
+                {
+                    renderer = GetComponentInChildren<SpriteRenderer>();
+                }
+                renderer.enabled = false;
+                Destroy(gameObject, 0.8f);
+            }
         }
 
-        
-      
+
+
     }
     /// <summary>
     /// cria uma particula e liga ela
