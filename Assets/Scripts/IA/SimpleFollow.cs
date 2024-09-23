@@ -39,7 +39,7 @@ public class SimpleFollow : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
 
-            target = null;
+            //target = null;
         }
     }
 }
